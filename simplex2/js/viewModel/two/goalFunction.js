@@ -1,7 +1,7 @@
 /**
  * Created by tania on 1.12.16.
  */
-define([ 'jquery','../../model/simplex.js'], function ($,SimplexModel) {
+define([ 'jquery','../../model/singleton/simplex.js'], function ($,SimplexModel) {
 
     var signs = {
         0: 'min',

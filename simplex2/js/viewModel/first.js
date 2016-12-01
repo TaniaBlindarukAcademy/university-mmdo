@@ -4,7 +4,7 @@
 define(['jquery',
         'text!partial/first.html',
         './two.js',
-        '../model/simplex.js'],
+        '../model/singleton/simplex.js'],
     function ($, template, secondViewModel, SimplexModel) {
 
     var $body = $(document.body);
@@ -30,8 +30,8 @@ define(['jquery',
     function appendTemplate() {
         $body.append($(template));
         $body.find('#toTwoStep').on('click',function(event){
-            SimplexModel.setVariableLength(getVariableLength());
-            SimplexModel.setEquationLength(getEquationLength());
+            SimplexModel.setVariableLength(getVariableLength())
+                .setEquationLength(getEquationLength());
             _toNextStep();
         });
     }

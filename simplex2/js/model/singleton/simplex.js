@@ -5,6 +5,7 @@ define([], function () {
     var singleton = function () {
         var equationLength = 2;
         var variableLength = 2;
+        var goalFunctional = [];
         return {
             getEquationLength: function () {
                 return equationLength;
