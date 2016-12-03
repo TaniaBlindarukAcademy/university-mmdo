@@ -7,37 +7,37 @@ define(['jquery',
         '../model/singleton/simplex.js'],
     function ($, template, secondViewModel, SimplexModel) {
 
-    var $body = $(document.body);
+        var $body = $(document.body);
 
-    function _getVarLength(selector) {
-        var number = $body.find(selector).val();
-        number = parseInt(number);
-        return (isNaN(number) || number < 2) ? 2 : number;
-    }
+        function _getVarLength(selector) {
+            var number = $body.find(selector).val();
+            number = parseInt(number);
+            return (isNaN(number) || number < 2) ? 2 : number;
+        }
 
-    function _toNextStep(){
-        secondViewModel.render();
-    }
+        function _toNextStep() {
+            secondViewModel.render();
+        }
 
-    function getEquationLength() {
-        return _getVarLength('#equationLength')
-    }
+        function getEquationLength() {
+            return _getVarLength('#equationLength')
+        }
 
-    function getVariableLength() {
-        return _getVarLength('#variableLength');
-    }
+        function getVariableLength() {
+            return _getVarLength('#variableLength');
+        }
 
-    function appendTemplate() {
-        $body.append($(template));
-        $body.find('#toTwoStep').on('click',function(event){
-            SimplexModel.setVariableLength(getVariableLength())
-                .setEquationLength(getEquationLength());
-            _toNextStep();
-        });
-    }
+        function appendTemplate() {
+            $body.append($(template));
+            $body.find('#toTwoStep').on('click', function (event) {
+                SimplexModel.setVariableLength(getVariableLength())
+                    .setEquationLength(getEquationLength());
+                _toNextStep();
+            });
+        }
 
-    return {
-        render: appendTemplate
-    };
+        return {
+            render: appendTemplate
+        };
 
-});
+    });

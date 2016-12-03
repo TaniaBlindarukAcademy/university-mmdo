@@ -5,7 +5,8 @@ define([], function () {
     var singleton = function () {
         var equationLength = 2;
         var variableLength = 2;
-        var goalFunctional = [];
+        var goalFunction = null;
+        var systemInequalities = [];
         return {
             getEquationLength: function () {
                 return equationLength;
@@ -23,7 +24,30 @@ define([], function () {
             setVariableLength: function (length) {
                 variableLength = length;
                 return this;
+            },
+
+            getGolaFunction: function () {
+                return goalFunction;
+            },
+
+            setGoalFunction: function (_goalFunction) {
+                goalFunction = _goalFunction;
+                return this;
+            },
+            getSystemInequalities: function () {
+                return systemInequalities;
+            },
+            addToSystemInequalities: function (_inequalities) {
+                systemInequalities.push(_inequalities);
+                return this;
+            },
+            setSystemInequalities: function(_systemInequalities){
+                systemInequalities = _systemInequalities;
+                return this;
             }
+
+
+
         };
     };
     return singleton();
