@@ -62,12 +62,6 @@ function Kernel() {
                 self.withoutTransformation(lim, fun);
             });
             }
-
-            if (strategy == 2) {
-                inp.generateSimplexTable($('#container'), limits, variables, function(lim, fun) {
-                    self.withoutTransformation(lim, fun, true);
-                });
-            }
         });
     };
 
